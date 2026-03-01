@@ -24,6 +24,14 @@ app.get('/admin', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'admin.html'));
 });
 
+app.get('/privacy-policy', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'privacy-policy.html'));
+});
+
+app.get('/terms-and-conditions', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'terms-and-conditions.html'));
+});
+
 app.get('/health', (req, res) => {
   res.json({ ok: true });
 });
