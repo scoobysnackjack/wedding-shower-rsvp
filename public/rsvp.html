@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jesston & Kerston's Couple's Shower - RSVP</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="rsvp-page">
+  <div class="container">
+    <div class="rsvp-card" id="rsvp-card">
+      <div class="invite-image-wrap">
+        <img class="invite-image" id="invite-image" src="/images/invite.png" alt="Jesston & Kerston's Couple's Shower Invitation" onerror="this.style.display='none'">
+      </div>
+
+      <div class="rsvp-content">
+        <h1 class="event-title" id="event-title">Jesston & Kerston's Couple's Shower</h1>
+
+        <div class="rsvp-buttons" id="buttons">
+          <button type="button" class="btn btn-attend" id="btn-yes">Will Attend</button>
+          <button type="button" class="btn btn-decline" id="btn-no">Will Not Attend</button>
+        </div>
+
+        <div class="attendance-controls" id="attendance-controls">
+          <div class="attendance-label">Total attending</div>
+          <div class="attendance-counter">
+            <button type="button" class="count-btn" id="count-minus" aria-label="Decrease attending count">-</button>
+            <span class="count-value" id="count-value">1</span>
+            <button type="button" class="count-btn" id="count-plus" aria-label="Increase attending count">+</button>
+          </div>
+          <div class="attendance-hint" id="attendance-hint">(You + 0 guests max)</div>
+        </div>
+
+        <div class="confirm-wrap" id="confirm-wrap">
+          <button type="button" class="btn btn-confirm" id="btn-confirm">Confirm</button>
+        </div>
+
+        <div class="event-details">
+          <div class="detail-section">
+            <div class="detail-label">Hosted by</div>
+            <div class="detail-value" id="host-name">Brooke Bishop</div>
+          </div>
+        </div>
+
+        <div class="event-description">
+          <p>Please join us for a couples shower honoring Jesston and Kerston as they begin their life together. We can't wait to celebrate with you!</p>
+        </div>
+
+        <div class="registry-link-wrap">
+          <a
+            class="registry-link"
+            href="https://www.honeyfund.com/site/simpson-bruner-04-18-2026"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Registry
+          </a>
+        </div>
+
+        <div class="event-details">
+          <div class="detail-section detail-stack">
+            <div class="detail-value">
+              <div class="detail-linklike">Sunday, March 29</div>
+              <div class="detail-linklike">2:00PM - 4:00PM CDT</div>
+            </div>
+          </div>
+
+          <div class="detail-section detail-stack">
+            <div class="detail-value">
+              <div class="detail-linklike">215 S Maple St</div>
+              <div class="detail-linklike">Oologah, OK 74053</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="confirmation" id="confirmation"></div>
+        <div class="error-message" id="error-message"></div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/rsvp.js"></script>
+</body>
+</html>

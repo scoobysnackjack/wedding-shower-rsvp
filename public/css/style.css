@@ -1,0 +1,191 @@
+:root {
+  --bg: #f3eee4;
+  --card: #fff;
+  --olive-green: #6b7d5a;
+  --beige: #f5f3f0;
+  --border: #e0e0e0;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --accent-dark: #5a6b4b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background: var(--bg);
+  color: var(--olive-green);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+
+.container { max-width: 600px; margin: 0 auto; padding: 0; }
+.rsvp-page .container { max-width: 560px; margin: 0 auto; padding: 0 10px calc(20px + env(safe-area-inset-bottom)); }
+
+.rsvp-card { background: #fff; overflow: hidden; text-align: center; border-radius: 12px; }
+.rsvp-card .invite-image-wrap { padding: 0; margin-bottom: 0; }
+.rsvp-card .invite-image { width: 100%; display: block; object-fit: contain; background: #fff; }
+.rsvp-content { padding: 44px 24px 30px; }
+
+.rsvp-card .event-title {
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0 0 34px;
+  color: var(--olive-green);
+  text-align: center;
+  letter-spacing: 0.03em;
+  line-height: 1.03;
+  text-transform: uppercase;
+}
+
+.rsvp-buttons { display: flex; gap: 12px; justify-content: center; margin-bottom: 44px; }
+
+.btn {
+  display: inline-block;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 0;
+  font-size: 13px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #efeee8;
+  color: var(--olive-green);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  min-width: 130px;
+  flex: 1;
+  max-width: 200px;
+  min-height: 46px;
+}
+
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn:not(:disabled):hover { background: #ebe8e3; }
+.btn.is-selected { background: #dddccf; }
+
+.attendance-controls { margin: -10px 0 24px; }
+.attendance-label { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+.attendance-counter { display: inline-flex; align-items: center; gap: 16px; }
+.count-btn {
+  width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--olive-green);
+  background: transparent; color: var(--olive-green); font-size: 24px; line-height: 1; cursor: pointer;
+}
+.count-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.count-value { min-width: 20px; font-size: 20px; }
+.attendance-hint { margin-top: 6px; font-size: 12px; opacity: 0.8; }
+.confirm-wrap { margin: 0 0 26px; }
+.btn-confirm { background: #2c58bb; color: #fff; border-radius: 999px; font-size: 16px; letter-spacing: 0.02em; min-width: 220px; }
+
+.event-details { margin-bottom: 24px; text-align: center; }
+.detail-section { margin-bottom: 20px; }
+.detail-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.20em; margin-bottom: 10px; }
+.detail-value { font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; }
+
+.event-description { padding-top: 6px; text-align: center; margin-bottom: 28px; }
+.event-description p { margin: 0; font-size: 14px; line-height: 1.45; text-align: center; }
+
+.registry-link-wrap { text-align: center; margin-bottom: 26px; }
+.registry-link { color: var(--olive-green); text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; text-decoration: underline; text-underline-offset: 4px; }
+
+.detail-stack .detail-value { font-size: 14px; line-height: 1.9; }
+.detail-linklike { display: inline-block; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+
+.confirmation {
+  padding: 16px;
+  background: #f0f7f0;
+  border-radius: 4px;
+  margin-top: 24px;
+  color: #2d5016;
+  font-size: 14px;
+  text-align: center;
+  display: none;
+}
+.confirmation.show { display: block; }
+.error-message {
+  padding: 16px;
+  background: #fff5f5;
+  color: #c62828;
+  border-radius: 4px;
+  margin-top: 24px;
+  font-size: 14px;
+  text-align: center;
+  display: none;
+}
+.error-message.show { display: block; }
+.loading { opacity: 0.7; pointer-events: none; }
+
+@media (max-width: 640px) {
+  .rsvp-content { padding: 24px 20px 32px; }
+  .rsvp-card .event-title { font-size: 28px; margin-bottom: 20px; line-height: 1.12; letter-spacing: 0.02em; }
+  .rsvp-buttons { gap: 10px; margin-bottom: 38px; }
+  .btn { padding: 12px 8px; font-size: 11px; letter-spacing: 0.16em; min-width: 0; max-width: none; }
+  .detail-label { font-size: 10px; margin-bottom: 8px; letter-spacing: 0.18em; }
+  .detail-value { font-size: 13px; line-height: 1.55; letter-spacing: 0.16em; }
+  .event-description p { font-size: 13px; line-height: 1.55; }
+  .registry-link { font-size: 11px; letter-spacing: 0.16em; }
+  .btn-confirm { width: 100%; min-width: 0; font-size: 15px; }
+}
+
+@media (max-width: 370px) {
+  .rsvp-content { padding: 20px 14px 24px; }
+  .rsvp-card .event-title { font-size: 28px; }
+  .event-description p { font-size: 12px; }
+  .btn { font-size: 10px; letter-spacing: 0.12em; }
+}
+
+/* Admin */
+.admin-page {
+  --admin-bg: #f5f1e8;
+  --admin-card: #fffdf8;
+  --admin-text: #41533a;
+  --admin-muted: #6f7f66;
+  --admin-accent: #6b7d5a;
+  --admin-accent-dark: #5a6b4b;
+  --admin-accent-soft: #ece5d7;
+  --admin-border: #e5decf;
+  --admin-shadow: 0 8px 24px rgba(83, 92, 72, 0.08);
+  background: var(--admin-bg);
+  color: var(--admin-text);
+}
+
+.admin-page .admin-container { max-width: 860px; margin: 0 auto; padding: 20px 16px 36px; }
+.admin-page .admin-header,
+.admin-page .upload-section,
+.admin-page .invite-section,
+.admin-page .guests-section,
+.admin-page .stat-card {
+  background: var(--admin-card);
+  border: 1px solid var(--admin-border);
+  border-radius: 14px;
+  box-shadow: var(--admin-shadow);
+}
+.admin-page .admin-header { padding: 20px; margin-bottom: 20px; }
+.admin-page .admin-header h1 { margin: 0 0 8px; font-size: 1.5rem; }
+.admin-page .admin-note { font-size: 0.9rem; color: var(--admin-muted); }
+.admin-page .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 14px; margin-bottom: 20px; }
+.admin-page .stat-card { padding: 16px; text-align: center; }
+.admin-page .stat-card .value { font-size: 1.75rem; font-weight: 600; color: var(--admin-accent); }
+.admin-page .stat-card .label { font-size: 0.85rem; color: var(--admin-muted); margin-top: 4px; }
+.admin-page .guests-section { overflow: hidden; margin-bottom: 20px; }
+.admin-page .guests-section h2 { margin: 0; padding: 16px 20px; font-size: 1.1rem; border-bottom: 1px solid var(--admin-border); }
+.admin-page .guests-table-wrap { overflow-x: auto; }
+.admin-page .guests-table { width: 100%; border-collapse: collapse; }
+.admin-page .guests-table th, .admin-page .guests-table td { padding: 12px 20px; text-align: left; border-bottom: 1px solid #f0e9dc; }
+.admin-page .guests-table th { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--admin-muted); background: #faf7f1; }
+.admin-page .guests-table tbody tr:nth-child(even) { background: #fcfaf5; }
+.status-badge { display: inline-block; padding: 5px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; border: 1px solid transparent; }
+.status-yes { background: #ecf5e8; color: #3f6a34; border-color: #cfe2c7; }
+.status-no { background: #fdf0ef; color: #9d4f4a; border-color: #f0d2cf; }
+.status-pending { background: #f7f2e8; color: #8a6f35; border-color: #e9dcc2; }
+.admin-page .admin-actions { display: flex; gap: 10px; padding: 16px 20px; border-top: 1px solid var(--admin-border); }
+.admin-page .btn { border-radius: 10px; font-weight: 600; letter-spacing: 0; text-transform: none; min-width: auto; max-width: none; flex: 0 0 auto; border: 1px solid var(--admin-border); background: var(--admin-accent-soft); color: var(--admin-text); }
+.admin-page .btn-primary { background: var(--admin-accent); color: #fff; border-color: var(--admin-accent); }
+.admin-page .btn-primary:hover:not(:disabled) { background: var(--admin-accent-dark); border-color: var(--admin-accent-dark); }
+.admin-page .upload-section, .admin-page .invite-section { padding: 20px; margin-bottom: 20px; }
+.admin-page .upload-section h2, .admin-page .invite-section h2 { margin: 0 0 12px; font-size: 1.1rem; }
+.admin-page .hint { font-size: 0.85rem; color: var(--admin-muted); margin-top: 8px; }
+.admin-page .upload-section input[type="file"], .admin-page .invite-section input { border: 1px solid var(--admin-border); border-radius: 10px; background: #fff; color: var(--admin-text); margin-bottom: 10px; }
+.admin-page .invite-section input { padding: 8px 12px; width: 100%; max-width: 360px; }
+.admin-page .sms-log { max-height: 200px; overflow-y: auto; font-size: 0.85rem; font-family: monospace; background: #f7f3ea; border: 1px solid var(--admin-border); padding: 12px; border-radius: 10px; margin-top: 12px; }

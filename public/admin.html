@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Wedding Shower RSVP</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin-page">
+  <div class="container admin-container">
+    <div class="admin-header">
+      <h1>Wedding Shower RSVP — Admin</h1>
+      <p class="admin-note">Guest list, stats, CSV export, upload, and SMS invites.</p>
+    </div>
+
+    <div class="stats-grid" id="stats-grid">
+      <div class="stat-card"><span class="value" id="stat-total">—</span><span class="label">Total</span></div>
+      <div class="stat-card"><span class="value" id="stat-yes">—</span><span class="label">Yes</span></div>
+      <div class="stat-card"><span class="value" id="stat-no">—</span><span class="label">No</span></div>
+      <div class="stat-card"><span class="value" id="stat-pending">—</span><span class="label">Not responded</span></div>
+    </div>
+
+    <div class="guests-section">
+      <h2>Guests</h2>
+      <div class="guests-table-wrap">
+        <table class="guests-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Max Invited</th>
+              <th>Attending</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="guests-tbody"></tbody>
+        </table>
+      </div>
+      <div class="admin-actions">
+        <a href="#" class="btn btn-primary" id="btn-export">Export CSV</a>
+      </div>
+    </div>
+
+    <div class="upload-section">
+      <h2>Upload guests (CSV)</h2>
+      <p class="hint">CSV with columns: name, phone, Total Invited (optional; defaults to 1).</p>
+      <input type="file" id="csv-file" accept=".csv">
+      <button type="button" class="btn btn-primary" id="btn-upload">Upload</button>
+      <div id="upload-result"></div>
+    </div>
+
+    <div class="invite-section">
+      <h2>Send SMS invites</h2>
+      <p class="hint">Sends one SMS per guest with their unique RSVP link. Rate limited to 1 per second.</p>
+      <input type="text" id="event-title" value="Jesston & Kerston's Couple's Shower" placeholder="Event title for message">
+      <br>
+      <button type="button" class="btn btn-primary" id="btn-send-invites">Send invites</button>
+      <pre class="sms-log" id="sms-log"></pre>
+    </div>
+  </div>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
